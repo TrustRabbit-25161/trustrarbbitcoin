@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trust Rabbit (TRBT) — A TRC-20 digital asset issued by a U.S.-based financial investment firm with public company heritage and deep experience in technology and blockchain partnerships." />
+  <title>Trust Rabbit | TRBT Official Website</title>
+  <link rel="icon" type="image/png" href="assets/rbit.png" />
+  <link rel="apple-touch-icon" href="assets/rbit.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-light: #132238;
+      --gold: #c9a227;
+      --gold-light: #e8c547;
+      --cream: #f5f3ee;
+      --text: #1a2332;
+      --muted: #5c6778;
+      --border: rgba(201, 162, 39, 0.25);
+      --shadow: 0 24px 64px rgba(10, 22, 40, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.65;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 22, 40, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .logo-mark-lg {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+      margin-bottom: 28px;
+    }
+
+    .hero-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-cta {
+      padding: 10px 20px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.875rem;
+      border-radius: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(201, 162, 39, 0.35);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(201, 162, 39, 0.12), transparent),
+        linear-gradient(165deg, var(--navy) 0%, #0d1f38 45%, var(--navy-light) 100%);
+      color: #fff;
+      padding: 120px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--gold-light);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: var(--gold-light);
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 540px;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(201, 162, 39, 0.4);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+      color: var(--gold-light);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat-item {
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 64px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+
+    .about-text p strong {
+      color: var(--navy);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 16px;
+      padding: 20px 24px;
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid rgba(10, 22, 40, 0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: var(--gold-light);
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+    }
+
+    .feature-item h4 {
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+
+    .feature-item p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Token */
+    .token-section {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    .token-section .section-tag {
+      color: var(--gold-light);
+    }
+
+    .token-section .section-header h2 {
+      color: #fff;
+    }
+
+    .token-section .section-header p {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .token-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .token-table tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .token-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .token-table td {
+      padding: 16px 0;
+      font-size: 0.95rem;
+    }
+
+    .token-table td:first-child {
+      color: rgba(255, 255, 255, 0.55);
+      width: 160px;
+    }
+
+    .token-table td:last-child {
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    .contract-link {
+      color: var(--gold-light);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .contract-link:hover {
+      color: #fff;
+    }
+
+    /* Focus areas */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .focus-card {
+      padding: 32px 28px;
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(10, 22, 40, 0.08);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s;
+    }
+
+    .focus-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .focus-num {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .focus-card h3 {
+      font-size: 1.35rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .focus-card p {
+      font-size: 0.925rem;
+      color: var(--muted);
+    }
+
+    /* Partners */
+    .partners-section {
+      background: #fff;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .partner-box {
+      padding: 28px 20px;
+      text-align: center;
+      background: var(--cream);
+      border-radius: 14px;
+      border: 1px solid rgba(10, 22, 40, 0.06);
+    }
+
+    .partner-box .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .partner-box h4 {
+      font-family: "Inter", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    .partner-box p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .contact-info h3 {
+      font-size: 1.75rem;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item .label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      min-width: 80px;
+    }
+
+    .contact-item .value {
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .contact-item a.value {
+      color: var(--gold);
+    }
+
+    .contact-item a.value:hover {
+      text-decoration: underline;
+    }
+
+    .disclaimer-box {
+      padding: 28px;
+      background: #fff;
+      border-radius: 14px;
+      border-left: 4px solid var(--gold);
+      box-shadow: var(--shadow);
+    }
+
+    .disclaimer-box h4 {
+      font-family: "Inter", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .disclaimer-box p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--navy);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 40px 0;
+      text-align: center;
+      font-size: 0.875rem;
+    }
+
+    footer strong {
+      color: var(--gold-light);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .partners-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="logo">
+        <img class="logo-mark" src="assets/rbit.png" alt="Trust Rabbit Logo" width="40" height="40" />
+        Trust Rabbit
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#token">Token</a></li>
+        <li><a href="#focus">Investments</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#token" class="nav-cta">View TRBT</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-brand">
+        <img class="logo-mark-lg" src="assets/rbit.png" alt="Trust Rabbit Logo" width="120" height="120" />
+        <div class="hero-badge">U.S. Financial Investment Group</div>
+        <h1>Trust Rabbit <span>TRBT</span></h1>
+        <p class="hero-desc">
+          A fixed-supply digital asset on the TRON network, issued by an American financial investment firm
+          with public company heritage — bridging institutional capital, internet innovation, and blockchain ecosystems.
+        </p>
+        <div class="hero-actions">
+          <a href="#token" class="btn btn-primary">Explore TRBT Token</a>
+          <a href="#about" class="btn btn-outline">Our Company</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Token Overview</h3>
+        <div class="stat-grid">
+          <div class="stat-item">
+            <div class="stat-label">Symbol</div>
+            <div class="stat-value">TRBT</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Network</div>
+            <div class="stat-value">TRON</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Total Supply</div>
+            <div class="stat-value">1 Billion</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Standard</div>
+            <div class="stat-value">TRC-20</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">About Us</div>
+        <h2>A Legacy of Institutional Investment</h2>
+        <p>
+          Headquartered in the United States, we are a financial investment company built on the foundation
+          of public market discipline and long-term capital stewardship.
+        </p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            <strong>Trust Rabbit Capital</strong> is a U.S.-based financial investment group with roots in publicly
+            listed capital markets. For over a decade, our team has deployed capital across high-growth internet
+            platforms, fintech infrastructure, and digital asset ecosystems.
+          </p>
+          <p>
+            We have invested in and partnered with leading internet companies at every stage of growth — from
+            early-stage innovation to global scale. Our network extends across the digital economy, including
+            strategic collaborations with blockchain projects, exchange platforms, and virtual asset companies
+            worldwide.
+          </p>
+          <p>
+            <strong>Trust Rabbit (TRBT)</strong> represents our commitment to transparent, on-chain financial
+            infrastructure on the TRON network — combining institutional-grade governance with the efficiency
+            of decentralized technology.
+          </p>
+        </div>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon">🏛</div>
+            <div>
+              <h4>Public Company Heritage</h4>
+              <p>Built on the standards of transparency, disclosure, and accountability from listed capital markets.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🌐</div>
+            <div>
+              <h4>Internet &amp; Tech Investments</h4>
+              <p>Deep portfolio experience across consumer internet, SaaS, fintech, and emerging digital platforms.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">⛓</div>
+            <div>
+              <h4>Blockchain Partnerships</h4>
+              <p>Active collaborations with crypto exchanges, DeFi protocols, and virtual asset companies globally.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🔒</div>
+            <div>
+              <h4>On-Chain Transparency</h4>
+              <p>TRBT smart contract verified on TronScan — open source, fixed supply, auditable by anyone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="token" class="token-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Digital Asset</div>
+        <h2>Trust Rabbit Token (TRBT)</h2>
+        <p>
+          A fixed-supply TRC-20 token deployed on the TRON blockchain with verified smart contract source code.
+        </p>
+      </div>
+      <div class="token-card">
+        <div style="text-align:center;margin-bottom:28px;">
+          <img src="assets/rbit.png" alt="Trust Rabbit TRBT" width="80" height="80" style="border-radius:50%;" />
+        </div>
+        <table class="token-table">
+          <tr>
+            <td>Token Name</td>
+            <td>Trust Rabbit</td>
+          </tr>
+          <tr>
+            <td>Symbol</td>
+            <td>TRBT</td>
+          </tr>
+          <tr>
+            <td>Network</td>
+            <td>TRON (TRC-20)</td>
+          </tr>
+          <tr>
+            <td>Total Supply</td>
+            <td>1,000,000,000 TRBT (Fixed)</td>
+          </tr>
+          <tr>
+            <td>Decimals</td>
+            <td>18</td>
+          </tr>
+          <tr>
+            <td>Contract Address</td>
+            <td>
+              <a class="contract-link" href="https://tronscan.org/#/token20/TUap9JbmTJx1yU33j5CQZ915T7nqMfZJC2" target="_blank" rel="noopener">
+                TUap9JbmTJx1yU33j5CQZ915T7nqMfZJC2
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>Contract Status</td>
+            <td>Verified on TronScan</td>
+          </tr>
+          <tr>
+            <td>Issuer</td>
+            <td>TSWn9i1b4X6boNiEccsLcB28hnY7rRRVL4</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="focus">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Investment Focus</div>
+        <h2>Where We Deploy Capital</h2>
+        <p>
+          Our investment philosophy combines institutional rigor with forward-looking technology conviction.
+        </p>
+      </div>
+      <div class="focus-grid">
+        <div class="focus-card">
+          <div class="focus-num">01</div>
+          <h3>Internet &amp; Digital Platforms</h3>
+          <p>
+            Early and growth-stage investments in consumer internet, marketplaces, social platforms,
+            and enterprise software driving the global digital economy.
+          </p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num">02</div>
+          <h3>Fintech &amp; Payments</h3>
+          <p>
+            Strategic positions in payment infrastructure, digital banking, remittance networks,
+            and cross-border financial technology solutions.
+          </p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num">03</div>
+          <h3>Blockchain &amp; Digital Assets</h3>
+          <p>
+            Partnerships and investments in cryptocurrency exchanges, DeFi protocols, tokenization
+            platforms, and blockchain infrastructure on TRON and beyond.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partners-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Ecosystem</div>
+        <h2>Partnerships &amp; Collaborations</h2>
+        <p>
+          We maintain active relationships across the technology and digital asset industries.
+        </p>
+      </div>
+      <div class="partners-grid">
+        <div class="partner-box">
+          <div class="icon">💱</div>
+          <h4>Crypto Exchanges</h4>
+          <p>Trading &amp; liquidity partners</p>
+        </div>
+        <div class="partner-box">
+          <div class="icon">🔗</div>
+          <h4>DeFi Protocols</h4>
+          <p>On-chain finance ecosystems</p>
+        </div>
+        <div class="partner-box">
+          <div class="icon">🏦</div>
+          <h4>Fintech Companies</h4>
+          <p>Payment &amp; banking infrastructure</p>
+        </div>
+        <div class="partner-box">
+          <div class="icon">🚀</div>
+          <h4>Internet Startups</h4>
+          <p>Growth-stage tech ventures</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Contact</div>
+        <h2>Get in Touch</h2>
+        <p>For institutional inquiries, partnership proposals, and token-related questions.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Trust Rabbit Capital</h3>
+          <p>
+            United States — Financial Investment &amp; Digital Asset Management
+          </p>
+          <div class="contact-item">
+            <span class="label">Email</span>
+            <a class="value" href="mailto:LyttleLashonda3920@outlook.com">LyttleLashonda3920@outlook.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="label">Website</span>
+            <span class="value">www.trustrabbit.capital</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">Network</span>
+            <span class="value">TRON (TRC-20)</span>
+          </div>
+          <div class="contact-item">
+            <span class="label">Explorer</span>
+            <a class="value" href="https://tronscan.org/#/token20/TUap9JbmTJx1yU33j5CQZ915T7nqMfZJC2" target="_blank" rel="noopener">
+              View on TronScan →
+            </a>
+          </div>
+        </div>
+        <div class="disclaimer-box">
+          <h4>Important Disclaimer</h4>
+          <p>
+            Trust Rabbit (TRBT) is a digital utility token deployed on the TRON blockchain. It does not
+            represent equity, ownership, or dividend rights in any company. This website is for informational
+            purposes only and does not constitute financial, legal, or investment advice. Cryptocurrency
+            investments carry significant risk. Please conduct your own research and consult qualified
+            professionals before making any financial decisions. Past investment performance does not
+            guarantee future results.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 <strong>Trust Rabbit Capital</strong>. All rights reserved. | TRBT Token on TRON</p>
+    </div>
+  </footer>
+
+</body>
+</html>
